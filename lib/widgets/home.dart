@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'profile.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Aadarsh Patel'),
+    return Row(
+      children: <Widget>[ShadyProfile()],
     );
   }
 }
