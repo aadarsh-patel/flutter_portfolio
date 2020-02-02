@@ -5,7 +5,7 @@ class ShadyParticleEffect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: new Particles(40, Color(0xff8a113a)),
+      child: new Particles(50, Color(0xff8a113a)),
     );
   }
 }
