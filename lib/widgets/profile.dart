@@ -9,6 +9,7 @@ class ShadyProfile extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10.0),
       child: Card(
+        elevation: 0.0,
         color: Colors.transparent,
         child: Container(
           width: queryData.size.width * 0.3,
@@ -16,7 +17,7 @@ class ShadyProfile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Image.asset('assets/images/IMG_20151225_1453890.jpg'),
+              Image.asset('assets/images/IMG_20151225_1453890.png'),
               Text(
                   'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio.'),
             ],

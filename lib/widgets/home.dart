@@ -7,10 +7,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-        children: <Widget>[
-          ShadyProfile(),
-          ShadyWrapList(),
-        ],
-      );
+      children: <Widget>[
+        ShadyProfile(),
+        ShadyWrapList(),
+      ],
+    );
   }
 }
