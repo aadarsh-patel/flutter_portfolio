@@ -9,6 +9,7 @@ class ShadyProfile extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10.0),
       child: Card(
+        color: Colors.transparent,
         child: Container(
           width: queryData.size.width * 0.3,
           padding: EdgeInsets.all(10.0),
