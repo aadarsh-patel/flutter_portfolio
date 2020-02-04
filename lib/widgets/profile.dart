@@ -19,7 +19,11 @@ class ShadyProfile extends StatelessWidget {
             children: <Widget>[
               Image.asset('assets/images/IMG_20151225_1453890.png'),
               Text(
-                  'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio.'),
+                'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio.',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
             ],
           ),
         ),
