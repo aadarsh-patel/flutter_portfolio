@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class ShadyAnimatedBackground extends StatelessWidget {
+  // final Color shadyColor1 = Color(0xffD38312);
+  // final Color shadyColor2 = Color(0xffA83279);
+
+  final Color shadyColor1 = Color(0xff12C2E9);
+  final Color shadyColor2 = Color(0xffF64F59);
+
   @override
   Widget build(BuildContext context) {
     final tween = MultiTrackTween([
       Track("color1").add(Duration(seconds: 5),
-          ColorTween(begin: Color(0xffD38312), end: Colors.lightBlue.shade900)),
+          ColorTween(begin: shadyColor1, end: shadyColor2)),
       Track("color2").add(Duration(seconds: 5),
-          ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600))
+          ColorTween(begin: shadyColor2, end: shadyColor1)),
     ]);
+
+    // final tween = MultiTrackTween([
+    //   Track("color1").add(Duration(seconds: 5),
+    //       ColorTween(begin: Color(0xffD38312), end: Colors.lightBlue.shade900)),
+    //   Track("color2").add(Duration(seconds: 5),
+    //       ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600)),
+    // ]);
 
     return ControlledAnimation(
       playback: Playback.MIRROR,
@@ -18,10 +31,12 @@ class ShadyAnimatedBackground extends StatelessWidget {
       builder: (context, animation) {
         return Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [animation["color1"], animation["color2"]])),
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [animation["color1"], animation["color2"]],
+            ),
+          ),
         );
       },
     );
