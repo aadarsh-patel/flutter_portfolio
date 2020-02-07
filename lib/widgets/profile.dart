@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ShadyProfile extends StatelessWidget {
+class ShadyProfile extends StatefulWidget {
+  @override
+  _ShadyProfileState createState() => _ShadyProfileState();
+}
+
+class _ShadyProfileState extends State<ShadyProfile> {
   @override
   Widget build(BuildContext context) {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
+    final _controller = TextEditingController();
+    String msg = '';
 
     return Container(
       padding: EdgeInsets.all(10.0),
@@ -24,6 +31,14 @@ class ShadyProfile extends StatelessWidget {
                   fontSize: 30,
                 ),
               ),
+              TextField(
+                controller: _controller,
+              ),
+              FlatButton(
+                  onPressed: () {
+                    print(_controller.text);
+                  },
+                  child: Text('Send message')),
             ],
           ),
         ),
