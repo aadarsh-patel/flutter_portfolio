@@ -1,8 +1,8 @@
-import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase/firebase.dart' as fb;
+import 'package:firebase/firestore.dart' as fs;
 
-final databaseReference = Firestore.instance;
+final fs.Firestore firestore = fb.firestore();
 
 void sendMessage(msg) {
-  databaseReference.collection('messages').add({'msg': msg});
+  firestore.collection('messages').add({'text': msg});
 }
