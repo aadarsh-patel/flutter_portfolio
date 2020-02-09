@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'msg_function.dart';
+
 class ShadyProfile extends StatefulWidget {
   @override
   _ShadyProfileState createState() => _ShadyProfileState();
@@ -26,7 +28,7 @@ class _ShadyProfileState extends State<ShadyProfile> {
             children: <Widget>[
               Image.asset('assets/images/IMG_20151225_1453890.png'),
               Text(
-                'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio.',
+                'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio. SEE you soon',
                 style: TextStyle(
                   fontSize: 30,
                 ),
@@ -36,7 +38,8 @@ class _ShadyProfileState extends State<ShadyProfile> {
               ),
               FlatButton(
                   onPressed: () {
-                    print(_controller.text);
+                    msg = _controller.text;
+                    sendMessage(msg);
                   },
                   child: Text('Send message')),
             ],
