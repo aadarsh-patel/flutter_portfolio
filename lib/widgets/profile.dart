@@ -26,7 +26,10 @@ class _ShadyProfileState extends State<ShadyProfile> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Image.asset('assets/images/IMG_20151225_1453890.png'),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(25.0),
+                child: Image.asset('assets/images/IMG_5698.JPG'),
+              ),
               Text(
                 'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio. SEE you soon',
                 style: TextStyle(
