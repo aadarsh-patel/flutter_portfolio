@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'msg_function.dart';
+import 'snack_bar.dart';
 
 class ShadyProfile extends StatefulWidget {
   @override
@@ -33,16 +34,23 @@ class _ShadyProfileState extends State<ShadyProfile> {
               Text(
                 'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio. SEE you soon',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
                 ),
               ),
               TextField(
+                decoration: InputDecoration(
+                  labelText: 'Type your message here',
+                  border: OutlineInputBorder(),
+                ),
+                maxLines: 5,
                 controller: _controller,
               ),
               FlatButton(
                   onPressed: () {
                     msg = _controller.text;
                     sendMessage(msg);
+                    _controller.text = '';
+                    Scaffold.of(context).showSnackBar(shadySnackBar);
                   },
                   child: Text('Send message')),
             ],
