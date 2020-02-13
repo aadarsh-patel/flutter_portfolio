@@ -46,13 +46,14 @@ class _ShadyProfileState extends State<ShadyProfile> {
                 controller: _controller,
               ),
               FlatButton(
-                  onPressed: () {
-                    msg = _controller.text;
-                    sendMessage(msg);
-                    _controller.text = '';
-                    Scaffold.of(context).showSnackBar(shadySnackBar);
-                  },
-                  child: Text('Send message')),
+                onPressed: () {
+                  msg = _controller.text;
+                  sendMessage(msg);
+                  _controller.text = '';
+                  Scaffold.of(context).showSnackBar(shadySnackBar);
+                },
+                child: Text('Send message'),
+              ),
             ],
           ),
         ),
