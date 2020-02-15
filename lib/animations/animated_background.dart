@@ -5,24 +5,26 @@ class ShadyAnimatedBackground extends StatelessWidget {
   // final Color shadyColor1 = Color(0xffD38312);
   // final Color shadyColor2 = Color(0xffA83279);
 
-  final Color shadyColor1 = Color(0xff12C2E9);
-  final Color shadyColor2 = Color(0xffF64F59);
+  // final Color shadyColor1 = Color(0xfffcb1b1);
+  // final Color shadyColor2 = Color(0xfff0f696);
+  // final Color shadyColor3 = Color(0xff96f7d2);
+  // final Color shadyColor4 = Color(0xfff5b5fc);
 
   @override
   Widget build(BuildContext context) {
+  //   final tween = MultiTrackTween([
+  //     Track("color1").add(Duration(seconds: 5),
+  //         ColorTween(begin: shadyColor1, end: shadyColor2)),
+  //     Track("color2").add(Duration(seconds: 5),
+  //         ColorTween(begin: shadyColor3, end: shadyColor4)),
+  //   ]);
+
     final tween = MultiTrackTween([
       Track("color1").add(Duration(seconds: 5),
-          ColorTween(begin: shadyColor1, end: shadyColor2)),
+          ColorTween(begin: Color(0xffD38312), end: Colors.lightBlue.shade900)),
       Track("color2").add(Duration(seconds: 5),
-          ColorTween(begin: shadyColor2, end: shadyColor1)),
+          ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600)),
     ]);
-
-    // final tween = MultiTrackTween([
-    //   Track("color1").add(Duration(seconds: 5),
-    //       ColorTween(begin: Color(0xffD38312), end: Colors.lightBlue.shade900)),
-    //   Track("color2").add(Duration(seconds: 5),
-    //       ColorTween(begin: Color(0xffA83279), end: Colors.blue.shade600)),
-    // ]);
 
     return ControlledAnimation(
       playback: Playback.MIRROR,

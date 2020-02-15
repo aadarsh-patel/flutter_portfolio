@@ -7,6 +7,13 @@ class ShadyChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(label: Text(title),);
+    return Chip(
+      label: Text(
+        title,
+        style: TextStyle(
+          fontSize: 30,
+        ),
+      ),
+    );
   }
 }

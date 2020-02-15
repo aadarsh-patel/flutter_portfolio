@@ -11,7 +11,6 @@ Future main() async {
   await DotEnv().load('.env');
 
   if (Firebase.apps.isEmpty) {
-    print(Firebase.apps);
     Firebase.initializeApp(
       apiKey: DotEnv().env['API_KEY'],
       authDomain: DotEnv().env['AUTH_DOMAIN'],
