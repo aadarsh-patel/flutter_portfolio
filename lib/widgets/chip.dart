@@ -7,11 +7,17 @@ class ShadyChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text(
-        title,
-        style: TextStyle(
-          fontSize: 30,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(25.0),
+      child: Container(
+        padding: EdgeInsets.all(10.0),
+        color: new Color.fromRGBO(232, 255, 232, 0.4),
+        child: Text(
+          title,
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.black,
+          ),
         ),
       ),
     );

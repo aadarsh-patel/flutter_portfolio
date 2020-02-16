@@ -11,32 +11,33 @@ class _ShadyProfileState extends State<ShadyProfile> {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
 
-    return Container(
-      padding: EdgeInsets.all(10.0),
-      child: Card(
-        elevation: 0.0,
-        color: Colors.transparent,
-        child: Container(
-          width: queryData.size.width * 0.2,
-          margin: const EdgeInsets.only(left: 10.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
+    return Card(
+      elevation: 0.0,
+      color: Colors.transparent,
+      child: Container(
+        height: 600,
+        margin: const EdgeInsets.only(left: 10.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Spacer(flex: 1),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25.0),
+              child: Container(
+                width: queryData.size.width * 0.2,
                 child: Image.asset('assets/images/IMG_5698.JPG'),
               ),
-              Spacer(flex: 1,),
-              Text(
-                'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+            ),
+            Spacer(
+              flex: 1,
+            ),
+            Text(
+              'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio',
+              style: TextStyle(
+                fontSize: 20,
               ),
-              Spacer(flex: 2,),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

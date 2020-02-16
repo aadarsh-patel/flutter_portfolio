@@ -40,7 +40,7 @@ class Home extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             ShadyAnimatedBackground(),
-            ShadyParticleEffect(),
+            //ShadyParticleEffect(),
             HomePage(),
           ],
         ),
