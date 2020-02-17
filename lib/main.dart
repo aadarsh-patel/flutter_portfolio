@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'animations/particle_effect.dart';
+//import 'animations/particle_effect.dart';
 import 'animations/animated_background.dart';
 import 'package:firebase/firebase.dart' as Firebase;
 import 'theme_data/shady_theme_data.dart';
@@ -34,16 +34,14 @@ Future main() async {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(color: Colors.grey),
-        child: Stack(
-          children: <Widget>[
-            ShadyAnimatedBackground(),
-            //ShadyParticleEffect(),
-            HomePage(),
-          ],
-        ),
+    return Container(
+      decoration: BoxDecoration(color: Colors.grey),
+      child: Stack(
+        children: <Widget>[
+          ShadyAnimatedBackground(),
+          //ShadyParticleEffect(),
+          HomePage(),
+        ],
       ),
     );
   }

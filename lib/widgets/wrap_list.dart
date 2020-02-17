@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'list_tile.dart';
 import 'chip.dart';
-import 'form.dart';
 
 class ShadyWrapList extends StatelessWidget {
   @override
@@ -11,7 +10,7 @@ class ShadyWrapList extends StatelessWidget {
     // queryData = MediaQuery.of(context);
 
     return Container(
-        height: 1200,
+        height: 1200,       //TODO use mediaquery height
         margin: const EdgeInsets.only(top: 10.0),
         child: Card(
           elevation: 0,
@@ -74,15 +73,6 @@ class ShadyWrapList extends StatelessWidget {
                 ],
               ),
               Spacer(flex: 1),
-              Text(
-                'You can send me a message down below 👇',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              SizedBox(height: 4.0),
-              ShadyForm(),
-              SizedBox(height: 20.0),
             ],
           ),
       ),

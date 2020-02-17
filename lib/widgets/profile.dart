@@ -28,13 +28,11 @@ class _ShadyProfileState extends State<ShadyProfile> {
                 child: Image.asset('assets/images/IMG_5698.JPG'),
               ),
             ),
-            Spacer(
-              flex: 1,
-            ),
+            Spacer(flex: 1),
             Text(
-              'Namaste!\nMy name is Aadarsh Patel and I welcome you to my portfolio',
+              'Namaste 🙏\nMy name is Aadarsh Patel and I welcome you to my portfolio.',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
               ),
             ),
           ],
