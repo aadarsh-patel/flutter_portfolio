@@ -22,14 +22,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Scrollbar(
-        child: SingleChildScrollView(
-          child: BackdropFilter(
-            filter: new ImageFilter.blur(
-                sigmaX: 5.0,
-                sigmaY: 5.0), //Original value sigmaX: 10.0, sigmaY: 10.0
-            child: Center(
-              child: tabWidgets.elementAt(_selectedIndex),
+      body: BackdropFilter(
+        filter: new ImageFilter.blur(
+          sigmaX: 5.0,
+          sigmaY: 5.0,
+        ),
+        child: Container(
+          child: Scrollbar(
+            child: SingleChildScrollView(
+              //Original value sigmaX: 10.0, sigmaY: 10.0
+              child: Center(
+                child: tabWidgets.elementAt(_selectedIndex),
+              ),
             ),
           ),
         ),
@@ -38,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.portrait),
-            title: Text('About'),
+            title: Text('Profile'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),

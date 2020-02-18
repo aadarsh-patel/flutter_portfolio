@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-//import 'animations/particle_effect.dart';
+//import 'animations/particle.dart';
+import 'animations/snowflakes.dart';
 import 'animations/animated_background.dart';
 import 'package:firebase/firebase.dart' as Firebase;
 import 'theme_data/shady_theme_data.dart';
@@ -38,9 +41,10 @@ class Home extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.grey),
       child: Stack(
         children: <Widget>[
-          ShadyAnimatedBackground(),
-          //ShadyParticleEffect(),
-          HomePage(),
+          Positioned.fill(child: ShadyAnimatedBackground()),
+          Positioned.fill(child: Snowflakes(20)),
+          //Positioned.fill(child: Particles(30)),
+          Positioned.fill(child: HomePage()),
         ],
       ),
     );

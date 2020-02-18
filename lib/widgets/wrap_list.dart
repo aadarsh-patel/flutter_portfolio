@@ -10,7 +10,7 @@ class ShadyWrapList extends StatelessWidget {
     // queryData = MediaQuery.of(context);
 
     return Container(
-        height: 1200,       //TODO use mediaquery height
+        height: 600,       //TODO use mediaquery height
         margin: const EdgeInsets.only(top: 10.0),
         child: Card(
           elevation: 0,

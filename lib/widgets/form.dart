@@ -20,81 +20,81 @@ class _ShadyFormState extends State<ShadyForm> {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
 
-    return Center(
-      child: Container(
-        margin: EdgeInsets.only(
-          left: queryData.size.width * 0.30,
-          right: queryData.size.width * 0.30,
-        ),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              Text(
-                'You can send me a message down below 👇',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+    return Container(
+      margin: EdgeInsets.only(
+        top: queryData.size.height*0.25,
+        left: queryData.size.width * 0.30,
+        right: queryData.size.width * 0.30,
+        bottom: queryData.size.height*0.25,
+      ),
+      child: Form(
+        key: _formKey,
+        child: Column(
+          children: <Widget>[
+            Text(
+              'You can send me a message down below 👇',
+              style: TextStyle(
+                fontSize: 20,
               ),
-              SizedBox(
-                height: 20,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+              style: TextStyle(color: Colors.black),
+              decoration: InputDecoration(
+                labelText: 'Your Name',
+                labelStyle: TextStyle(),
+                border: OutlineInputBorder(),
               ),
-              TextFormField(
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  labelText: 'Your Name',
-                  labelStyle: TextStyle(),
-                  border: OutlineInputBorder(),
-                ),
-                controller: _nameController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter your name!';
+              controller: _nameController,
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'Please enter your name!';
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 6.0),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'Your message',
+                border: OutlineInputBorder(),
+              ),
+              maxLines: 4,
+              controller: _msgController,
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'Please enter your message!';
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 6.0),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20.0),
+              child: FlatButton(
+                color: new Color.fromRGBO(232, 255, 232, 0.6),
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {
+                    name = _nameController.text;
+                    msg = _msgController.text;
+                    sendMessage(name, msg);
+                    _msgController.text = '';
+                    _nameController.text = '';
+                    Scaffold.of(context).showSnackBar(shadySnackBar);
                   }
-                  return null;
                 },
-              ),
-              SizedBox(height: 6.0),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Your message',
-                  border: OutlineInputBorder(),
-                ),
-                maxLines: 4,
-                controller: _msgController,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter your message!';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 6.0),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: FlatButton(
-                  color: new Color.fromRGBO(232, 255, 232, 0.6),
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      name = _nameController.text;
-                      msg = _msgController.text;
-                      sendMessage(name, msg);
-                      _msgController.text = '';
-                      _nameController.text = '';
-                      Scaffold.of(context).showSnackBar(shadySnackBar);
-                    }
-                  },
-                  child: Text(
-                    'Send message',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
+                child: Text(
+                  'Send message',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
