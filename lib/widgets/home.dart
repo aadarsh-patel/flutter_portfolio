@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-import 'wrap_list.dart';
 import 'profile.dart';
 import 'form.dart';
 
@@ -14,7 +13,6 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
   static List<Widget> tabWidgets = <Widget>[
     ShadyProfile(),
-    ShadyWrapList(),
     ShadyForm(),
   ];
 
@@ -24,16 +22,14 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.transparent,
       body: BackdropFilter(
         filter: new ImageFilter.blur(
-          sigmaX: 5.0,
-          sigmaY: 5.0,
+          //Standard value sigmaX: 10.0, sigmaY: 10.0
+          sigmaX: 3.0,
+          sigmaY: 3.0,
         ),
-        child: Container(
-          child: Scrollbar(
-            child: SingleChildScrollView(
-              //Original value sigmaX: 10.0, sigmaY: 10.0
-              child: Center(
-                child: tabWidgets.elementAt(_selectedIndex),
-              ),
+        child: Scrollbar(
+          child: SingleChildScrollView(
+            child: Center(
+              child: tabWidgets.elementAt(_selectedIndex),
             ),
           ),
         ),
@@ -43,10 +39,6 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.portrait),
             title: Text('Profile'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            title: Text('Contact me'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),

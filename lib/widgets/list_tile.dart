@@ -18,13 +18,11 @@ class ShadyListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
 
     return Card(
       color: new Color.fromRGBO(232, 255, 232, 0.2),
       child: Container(
-        width: queryData.size.width*0.37,
+        width: 560,
         height: 74,
         child: ListTile(
           leading: CircleAvatar(

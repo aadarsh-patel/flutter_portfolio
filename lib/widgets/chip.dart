@@ -10,7 +10,7 @@ class ShadyChip extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(25.0),
       child: Container(
-        padding: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(8.0),
         color: new Color.fromRGBO(232, 255, 232, 0.4),
         child: Text(
           title,
