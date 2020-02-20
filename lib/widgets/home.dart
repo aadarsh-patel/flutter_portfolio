@@ -23,8 +23,8 @@ class _HomePageState extends State<HomePage> {
       body: BackdropFilter(
         filter: new ImageFilter.blur(
           //Standard value sigmaX: 10.0, sigmaY: 10.0
-          sigmaX: 3.0,
-          sigmaY: 3.0,
+          sigmaX: 5.5,
+          sigmaY: 5.5,
         ),
         child: Scrollbar(
           child: SingleChildScrollView(

@@ -22,11 +22,11 @@ class ShadyListTile extends StatelessWidget {
     return Card(
       color: new Color.fromRGBO(232, 255, 232, 0.2),
       child: Container(
-        width: 560,
-        height: 74,
+        width: 260,
+        height: 60,
         child: ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.transparent ,
             child: Image.asset('$logoPath'),
           ),
           title: Image.asset('$titlePath'),

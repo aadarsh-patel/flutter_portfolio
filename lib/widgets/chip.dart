@@ -15,7 +15,7 @@ class ShadyChip extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 20,
             color: Colors.black,
           ),
         ),

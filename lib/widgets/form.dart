@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'msg_function.dart';
 import 'snack_bar.dart';
-import 'list_tile.dart';
 
 class ShadyForm extends StatefulWidget {
   @override
@@ -18,56 +18,51 @@ class _ShadyFormState extends State<ShadyForm> {
 
   @override
   Widget build(BuildContext context) {
+    MediaQueryData queryData;
+    queryData = MediaQuery.of(context);
+
+    double _varHeight = 650;
+
+    if (queryData.size.width < 906 && queryData.size.width > 764) {
+      _varHeight = 700;
+    } else if (queryData.size.width < 764 && queryData.size.width > 516) {
+      _varHeight = 720;
+    } else if (queryData.size.width < 516) {
+      _varHeight = 750;
+    }
+
     return Container(
-      height: 900,
+      height: _varHeight,
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          SizedBox(height:20),
-          Text(
-            'My profile links:',
-            style: TextStyle(
-              fontSize: 22,
-            ),
-          ),
-          Wrap(
-            spacing: 10.0,
-            runSpacing: 3.0,
-            direction: Axis.horizontal,
-            children: <Widget>[
-              ShadyListTile(
-                'assets/images/git_logo.png',
-                'assets/images/git_title.png',
-                'https://github.com/aadarsh-patel',
-              ),
-              ShadyListTile(
-                'assets/images/link_logo.png',
-                'assets/images/link_title.png',
-                'https://www.linkedin.com/in/aadarsh-patel-634ab1167/',
-              ),
-              ShadyListTile(
-                'assets/images/code_logo.png',
-                'assets/images/code_title.png',
-                'https://www.codechef.com/users/aadarsh_patel',
-              ),
-              ShadyListTile(
-                'assets/images/stack_logo.png',
-                'assets/images/stack_title.png',
-                'https://stackoverflow.com/users/11555932/aadarsh-patel',
-              ),
-            ],
-          ),
+          Spacer(flex: 1),
           Container(
-            width: 460,
+            width: 420,
             child: Form(
               key: _formKey,
               child: Column(
                 children: <Widget>[
+                  Container(
+                    width: 350,
+                    child: ListTile(
+                      title: SelectableText('Email me at        patelaadarsh0@gmail.com',style: TextStyle(fontSize: 18),),
+                      trailing: IconButton(
+                        icon: Icon(Icons.content_copy),
+                        onPressed: () {
+                          Clipboard.setData(new ClipboardData(
+                              text: "patelaadarsh0@gmail.com"));
+                        },
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text('or', style: TextStyle(fontSize: 16),),
+                  SizedBox(height: 8),
                   Text(
                     'You can send me a message down below 👇',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                     ),
                   ),
                   SizedBox(
@@ -131,11 +126,13 @@ class _ShadyFormState extends State<ShadyForm> {
               ),
             ),
           ),
+          Spacer(flex: 1),
           Text(
-            'Source code of this web app is available on my github. 🌼\nI made it using Flutter web.',
+            'Source code of this website is available on my Github.\nI made it using Flutter web.',
             style: TextStyle(fontSize: 18),
+            textAlign: TextAlign.center,
           ),
-          //SizedBox(height: 15),
+          SizedBox(height: 15),
         ],
       ),
     );
