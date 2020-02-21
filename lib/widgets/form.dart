@@ -46,7 +46,41 @@ class _ShadyFormState extends State<ShadyForm> {
                   Container(
                     width: 350,
                     child: ListTile(
-                      title: SelectableText('Email me at        patelaadarsh0@gmail.com',style: TextStyle(fontSize: 18),),
+                      title: RichText(
+                        textAlign: TextAlign.left,
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                              text: 'Email me at\n',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Varela',
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 7.0,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            TextSpan(
+                              text: 'patelaadarsh0@gmail.com',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                fontFamily: 'Varela',
+                                shadows: [
+                                  Shadow(
+                                    blurRadius: 7.0,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                       trailing: IconButton(
                         icon: Icon(Icons.content_copy),
                         onPressed: () {
@@ -57,7 +91,10 @@ class _ShadyFormState extends State<ShadyForm> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  Text('or', style: TextStyle(fontSize: 16),),
+                  Text(
+                    'or',
+                    style: TextStyle(fontSize: 16),
+                  ),
                   SizedBox(height: 8),
                   Text(
                     'You can send me a message down below 👇',
@@ -128,7 +165,7 @@ class _ShadyFormState extends State<ShadyForm> {
           ),
           Spacer(flex: 1),
           Text(
-            'Source code of this website is available on my Github.\nI made it using Flutter web.',
+            'Source code of this website is available on my Github.\nMade with ❤️ using Flutter.',
             style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),

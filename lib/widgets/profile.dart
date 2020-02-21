@@ -15,12 +15,10 @@ class _ShadyProfileState extends State<ShadyProfile> {
     queryData = MediaQuery.of(context);
 
     double _varHeight = 650;
-    if (queryData.size.width < 906 && queryData.size.width > 764) {
-      _varHeight = 750;
-    } else if (queryData.size.width < 764 && queryData.size.width > 516) {
-      _varHeight = 850;
-    } else if (queryData.size.width < 516) {
-      _varHeight = 950;
+    if (queryData.size.width <= 567) {
+      _varHeight = 870;
+    } else if (queryData.size.width <= 1123) {
+      _varHeight = 720;
     }
 
     return Card(
@@ -34,42 +32,76 @@ class _ShadyProfileState extends State<ShadyProfile> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 30),
+            SizedBox(height: 10),
             ClipRRect(
-              borderRadius: BorderRadius.circular(25.0),
+              borderRadius: BorderRadius.circular(10.0),
               child: Container(
+                color: new Color.fromRGBO(232, 255, 232, 0.1),
                 width: 200,
                 height: 200,
-                child: Image.asset('assets/images/IMG_5698.JPG'),
+                child: Image.asset('assets/images/test.png'),
               ),
             ),
-            SizedBox(height: 30),
-            Text(
-              'Hello,\nMy name is Aadarsh Patel and I welcome you to my portfolio.\n2nd year CSE Student at IIIT Naya Raipur.🎓',
-              style: TextStyle(
-                fontSize: 20,
+            SizedBox(height: 32),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: DefaultTextStyle.of(context).style,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: 'Hi! I\'m',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: ' Aadarsh Patel\n',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.black,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 7.0,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                  TextSpan(
+                    text: '2nd year CSE Student at IIIT Naya Raipur.',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '🎓',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 30),
+            Spacer(flex:1),
             Text(
-              '  Things that I love to do:',
+              'Things I love to do 💻:',
               style: TextStyle(
                 fontSize: 20,
               ),
             ),
             SizedBox(height: 4.0),
-              Wrap(
-                spacing: 10.0,
-                runSpacing: 3.0,
-                direction: Axis.horizontal,
-                children: <Widget>[
-                  ShadyChip('App Development'),
-                  ShadyChip('Competitive Coding'),
-                  ShadyChip('Web Development'),
-                  ShadyChip('UI Design'),
-                ],
-              ),
-              Spacer(flex: 1),
+            Wrap(
+              spacing: 10.0,
+              runSpacing: 3.0,
+              direction: Axis.horizontal,
+              children: <Widget>[
+                ShadyChip('App Development'),
+                ShadyChip('Competitive Coding'),
+                ShadyChip('Web Development'),
+                ShadyChip('UI Design'),
+              ],
+            ),
+            Spacer(flex:1),
             Text(
               'My profile links:',
               style: TextStyle(
