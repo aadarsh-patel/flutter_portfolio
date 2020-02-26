@@ -1,6 +1,6 @@
-# Portfolio made using Flutter and Firebase.
+# Portfolio made using Flutter web and Firebase.
 
-You can view this website at [aadarsh-patel.github.io](https://aadarsh-patel.github.io/#/)
+You can view this website at [aadarsh-patel.github.io](https://aadarsh-patel.github.io/#/) 
 
 ## How to use this code for your own project.
 
@@ -11,8 +11,13 @@ You can view this website at [aadarsh-patel.github.io](https://aadarsh-patel.git
 ### Steps
 1. Fork this repo and clone to your local repo.
 2. Go to main.dart file
-3. Comment the following section shown in image.(or you may replace it with your own credentials of your firebase databse if you have.)
-4. Run the following command in terminal. `flutter run -d chrome`
+3. Comment the following section as shown in image.(or you may replace it with credentials of your own firebase databse if you have.)
+4. Change your flutter channel from stable to master.
+5. Run the following command in terminal. `flutter upgrade`
+6. then `flutter config --enable-web`
+7. finally `flutter run -d chrome`
+
+## Demo
 
 ## Special thanks to
 
