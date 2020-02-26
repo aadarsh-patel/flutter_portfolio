@@ -1,16 +1,23 @@
-# portfolio
+# Portfolio made using Flutter and Firebase.
 
-A new Flutter project.
+You can view this website at [aadarsh-patel.github.io](https://aadarsh-patel.github.io/#/)
 
-## Getting Started
+## How to use this code for your own project.
 
-This project is a starting point for a Flutter application.
+### Requirements
+1. Flutter
+2. Chrome Browser
 
-A few resources to get you started if this is your first Flutter project:
+### Steps
+1. Fork this repo and clone to your local repo.
+2. Go to main.dart file
+3. Comment the following section shown in image.(or you may replace it with your own credentials of your firebase databse if you have.)
+4. Run the following command in terminal. `flutter run -d chrome`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Special thanks to
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
++ [Constantin Stan](https://github.com/Constans) for cool [snow effect animation.](https://medium.com/flutter-community/fluttering-snowflakes-1cf011b0d38d)
+
++ [Felix Blaschke](https://github.com/felixblaschke) for awesome [particle animation.](https://medium.com/@felixblaschke/particle-animations-with-flutter-756a23dba027)
+
++ [Markus Bürkle](https://www.pexels.com/@doozydoom) for [background image](https://www.pexels.com/photo/trees-covered-with-snow-833013/?utm_content=attributionCopyText&utm_medium=referral&utm_source=pexels).
