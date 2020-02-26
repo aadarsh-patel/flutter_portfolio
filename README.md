@@ -12,12 +12,14 @@ You can view this website at [aadarsh-patel.github.io](https://aadarsh-patel.git
 1. Fork this repo and clone to your local repo.
 2. Go to main.dart file
 3. Comment the following section as shown in image.(or you may replace it with credentials of your own firebase databse if you have.)
+![](https://github.com/aadarsh-patel/flutter_portfolio/blob/master/assets/demo/Capture.JPG)
 4. Change your flutter channel from stable to master.
 5. Run the following command in terminal. `flutter upgrade`
 6. then `flutter config --enable-web`
 7. finally `flutter run -d chrome`
 
 ## Demo
+![](https://github.com/aadarsh-patel/flutter_portfolio/blob/master/assets/demo/portfolio_desktop.gif)
 
 ## Special thanks to
 
