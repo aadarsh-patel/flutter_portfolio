@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:clay_containers/clay_containers.dart';
+
 class ShadyListTile extends StatelessWidget {
   final String logoPath;
   final String titlePath;
@@ -18,20 +20,20 @@ class ShadyListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return Card(
-      color: new Color.fromRGBO(232, 255, 232, 0.2),
-      child: Container(
-        width: 260,
-        height: 60,
-        child: ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.transparent ,
-            child: Image.asset('$logoPath'),
-          ),
-          title: Image.asset('$titlePath'),
-          onTap: _launchURL,
+    return ClayContainer(
+      color: Theme.of(context).primaryColor,
+      width: 260,
+      height: 60,
+      depth: 40,
+      spread: 3,
+      borderRadius: 15,
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          child: Image.asset('$logoPath'),
         ),
+        title: Image.asset('$titlePath'),
+        onTap: _launchURL,
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:clay_containers/clay_containers.dart';
+
 import 'chip.dart';
 import 'list_tile.dart';
 
@@ -33,66 +35,41 @@ class _ShadyProfileState extends State<ShadyProfile> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: 10),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Container(
-                color: new Color.fromRGBO(232, 255, 232, 0.1),
-                width: 200,
-                height: 200,
-                child: Image.asset('assets/images/test.png'),
-              ),
+            ClayContainer(
+              color: Theme.of(context).primaryColor,
+              width: 200,
+              height: 200,
+              child: Image.asset('assets/images/test.png'),
+              borderRadius: 25,
+              emboss: true,
             ),
             SizedBox(height: 32),
-            RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: DefaultTextStyle.of(context).style,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Hi! I\'m',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+            ClayContainer(
+              color: Theme.of(context).primaryColor,
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  "Hello! I'm Aadarsh Patel\n2nd Year CSE Student at IIIT Naya Raipur.",
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                    fontSize: 25,
                   ),
-                  TextSpan(
-                    text: ' Aadarsh Patel\n',
-                    style: TextStyle(
-                      fontSize: 22,
-                      color: Colors.black,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 7.0,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
-                  ),
-                  TextSpan(
-                    text: '2nd year CSE Student at IIIT Naya Raipur.',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  TextSpan(
-                    text: '🎓',
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
+                ),
               ),
+              emboss: true,
+              borderRadius: 25,
             ),
-            Spacer(flex:1),
+            Spacer(flex: 1),
             Text(
               'Things I love to do 💻:',
               style: TextStyle(
                 fontSize: 20,
               ),
             ),
-            SizedBox(height: 4.0),
+            SizedBox(height: 20.0),
             Wrap(
-              spacing: 10.0,
-              runSpacing: 3.0,
+              spacing: 24.0,
+              runSpacing: 24.0,
               direction: Axis.horizontal,
               children: <Widget>[
                 ShadyChip('App Development'),
@@ -101,15 +78,16 @@ class _ShadyProfileState extends State<ShadyProfile> {
                 ShadyChip('UI Design'),
               ],
             ),
-            Spacer(flex:1),
+            Spacer(flex: 1),
             Text(
               'My profile links:',
               style: TextStyle(
                 fontSize: 22,
               ),
             ),
+            SizedBox(height: 15,),
             Wrap(
-              spacing: 10.0,
+              spacing: 20.0,
               runSpacing: 3.0,
               direction: Axis.horizontal,
               children: <Widget>[

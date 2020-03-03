@@ -27,6 +27,7 @@ dependencies:
   intl: ^0.15.8
   flutter_particles: ^1.0.0+7
   simple_animations: ^1.3.6
+  clay_containers: ^0.2.2
 
 dev_dependencies:
   flutter_test:

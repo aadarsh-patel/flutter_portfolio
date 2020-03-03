@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 import 'profile.dart';
 import 'form.dart';
@@ -19,18 +18,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BackdropFilter(
-        filter: new ImageFilter.blur(
-          //Standard value sigmaX: 10.0, sigmaY: 10.0
-          sigmaX: 5.5,
-          sigmaY: 5.5,
-        ),
-        child: Scrollbar(
-          child: SingleChildScrollView(
-            child: Center(
-              child: tabWidgets.elementAt(_selectedIndex),
-            ),
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          child: Center(
+            child: tabWidgets.elementAt(_selectedIndex),
           ),
         ),
       ),
