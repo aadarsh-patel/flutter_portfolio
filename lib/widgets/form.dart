@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'package:clay_containers/clay_containers.dart';
+
 import 'msg_function.dart';
 import 'snack_bar.dart';
 
@@ -43,45 +45,20 @@ class _ShadyFormState extends State<ShadyForm> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-                  Container(
-                    width: 350,
-                    child: ListTile(
-                      title: RichText(
-                        textAlign: TextAlign.left,
-                        text: TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: 'Email me at\n',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontFamily: 'Varela',
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 7.0,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            TextSpan(
-                              text: 'patelaadarsh0@gmail.com',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontFamily: 'Varela',
-                                shadows: [
-                                  Shadow(
-                                    blurRadius: 7.0,
-                                    color: Colors.white,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                  ListTile(
+                    title: Text(
+                      'Email me at\npatelaadarsh0@gmail.com',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
-                      trailing: IconButton(
+                    ),
+                    trailing: ClayContainer(
+                      spread: 2,
+                      borderRadius: 10,
+                      color: Theme.of(context).primaryColor,
+                      child: IconButton(
+                        color: Colors.black,
                         icon: Icon(Icons.content_copy),
                         onPressed: () {
                           Clipboard.setData(new ClipboardData(
@@ -93,53 +70,68 @@ class _ShadyFormState extends State<ShadyForm> {
                   SizedBox(height: 8),
                   Text(
                     'or',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                   SizedBox(height: 8),
                   Text(
                     'You can send me a message down below 👇',
                     style: TextStyle(
                       fontSize: 18,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 8,
                   ),
-                  TextFormField(
-                    style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      labelText: 'Your Name',
-                      labelStyle: TextStyle(),
-                      border: OutlineInputBorder(),
+                  ClayContainer(
+                    color: Theme.of(context).primaryColor,
+                    emboss: true,
+                    child: Padding(
+                      padding: EdgeInsets.all(5),
+                      child: Column(
+                        children: <Widget>[
+                          TextFormField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                              labelText: 'Your Name',
+                              labelStyle: TextStyle(),
+                              border: OutlineInputBorder(),
+                            ),
+                            controller: _nameController,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please enter your name!';
+                              }
+                              return null;
+                            },
+                          ),
+                          SizedBox(height: 6.0),
+                          TextFormField(
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                              labelText: 'Your message',
+                              border: OutlineInputBorder(),
+                            ),
+                            maxLines: 4,
+                            controller: _msgController,
+                            validator: (value) {
+                              if (value.isEmpty) {
+                                return 'Please enter your message!';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ),
                     ),
-                    controller: _nameController,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please enter your name!';
-                      }
-                      return null;
-                    },
                   ),
-                  SizedBox(height: 6.0),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'Your message',
-                      border: OutlineInputBorder(),
-                    ),
-                    maxLines: 4,
-                    controller: _msgController,
-                    validator: (value) {
-                      if (value.isEmpty) {
-                        return 'Please enter your message!';
-                      }
-                      return null;
-                    },
-                  ),
-                  SizedBox(height: 6.0),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20.0),
+                  SizedBox(height: 20),
+                  ClayContainer(
+                    spread: 3,
+                    borderRadius: 10,
+                    depth: 30,
+                    color: Theme.of(context).primaryColor,
                     child: FlatButton(
-                      color: new Color.fromRGBO(232, 255, 232, 0.6),
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           name = _nameController.text;
@@ -166,7 +158,10 @@ class _ShadyFormState extends State<ShadyForm> {
           Spacer(flex: 1),
           Text(
             'Source code of this website is available on my Github.\nMade with ❤️ using Flutter.',
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+            ),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 15),

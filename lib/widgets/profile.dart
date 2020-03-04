@@ -64,6 +64,7 @@ class _ShadyProfileState extends State<ShadyProfile> {
               'Things I love to do 💻:',
               style: TextStyle(
                 fontSize: 20,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 20.0),
@@ -83,6 +84,7 @@ class _ShadyProfileState extends State<ShadyProfile> {
               'My profile links:',
               style: TextStyle(
                 fontSize: 22,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 15,),
