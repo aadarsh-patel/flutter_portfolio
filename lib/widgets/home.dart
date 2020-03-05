@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Colors.transparent,
       body: Scrollbar(
         child: SingleChildScrollView(
           child: Center(
@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.black,
         elevation: 100,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

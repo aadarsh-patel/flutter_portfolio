@@ -21,12 +21,12 @@ class ShadyListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClayContainer(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).accentColor,
       width: 260,
       height: 60,
       depth: 40,
-      spread: 3,
-      borderRadius: 15,
+      spread: 2,
+      borderRadius: 10,
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.transparent,

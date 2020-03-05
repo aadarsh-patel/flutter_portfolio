@@ -18,7 +18,7 @@ class _ShadyProfileState extends State<ShadyProfile> {
 
     double _varHeight = 650;
     if (queryData.size.width <= 567) {
-      _varHeight = 870;
+      _varHeight = 890;
     } else if (queryData.size.width <= 1123) {
       _varHeight = 720;
     }
@@ -90,18 +90,18 @@ class _ShadyProfileState extends State<ShadyProfile> {
             SizedBox(height: 15,),
             Wrap(
               spacing: 20.0,
-              runSpacing: 3.0,
+              runSpacing: 12.0,
               direction: Axis.horizontal,
               children: <Widget>[
-                ShadyListTile(
-                  'assets/images/git_logo.png',
-                  'assets/images/git_title.png',
-                  'https://github.com/aadarsh-patel',
-                ),
                 ShadyListTile(
                   'assets/images/link_logo.png',
                   'assets/images/link_title.png',
                   'https://www.linkedin.com/in/aadarsh-patel-634ab1167/',
+                ),
+                ShadyListTile(
+                  'assets/images/git_logo.png',
+                  'assets/images/git_title.png',
+                  'https://github.com/aadarsh-patel',
                 ),
                 ShadyListTile(
                   'assets/images/code_logo.png',

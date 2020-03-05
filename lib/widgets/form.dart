@@ -83,9 +83,8 @@ class _ShadyFormState extends State<ShadyForm> {
                   SizedBox(
                     height: 8,
                   ),
-                  ClayContainer(
-                    color: Theme.of(context).primaryColor,
-                    emboss: true,
+                  Container(
+                    color: Colors.transparent,
                     child: Padding(
                       padding: EdgeInsets.all(5),
                       child: Column(
