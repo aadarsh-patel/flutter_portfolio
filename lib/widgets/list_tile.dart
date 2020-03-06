@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:clay_containers/clay_containers.dart';
-
 class ShadyListTile extends StatelessWidget {
   final String logoPath;
   final String titlePath;
@@ -20,13 +18,17 @@ class ShadyListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClayContainer(
-      color: Theme.of(context).accentColor,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        border: Border.all(
+          width: 2.0,
+          color: Colors.white.withOpacity(0.1),
+        ),
+        color: Colors.white.withOpacity(0.15),
+      ),
       width: 260,
       height: 60,
-      depth: 40,
-      spread: 2,
-      borderRadius: 10,
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: Colors.transparent,

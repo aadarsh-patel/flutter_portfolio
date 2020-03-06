@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:clay_containers/clay_containers.dart';
-
 class ShadyChip extends StatelessWidget {
   final String title;
 
@@ -9,10 +7,14 @@ class ShadyChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClayContainer(
-      color: Theme.of(context).primaryColor,
-      borderRadius: 20,
-      emboss: true,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        border: Border.all(
+          width: 2.0,
+          color: Colors.white.withOpacity(0.1),
+        ),
+      ),
       child: Padding(
         padding: EdgeInsets.all(10),
         child: Text(

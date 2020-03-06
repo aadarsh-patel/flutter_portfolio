@@ -23,10 +23,15 @@ Future main() async {
   runApp(
     MaterialApp(
       home: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.green, Colors.blue]),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.green, Colors.blue],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-          child: HomePage()),
+        ),
+        child: HomePage(),
+      ),
       debugShowCheckedModeBanner: false,
       theme: shadyThemeData,
     ),

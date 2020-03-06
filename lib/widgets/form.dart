@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:clay_containers/clay_containers.dart';
-
 import 'msg_function.dart';
 import 'snack_bar.dart';
 
@@ -46,31 +44,28 @@ class _ShadyFormState extends State<ShadyForm> {
               child: Column(
                 children: <Widget>[
                   ListTile(
-                    title: Text(
+                    title: SelectableText(
                       'Email me at\npatelaadarsh0@gmail.com',
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
-                    trailing: ClayContainer(
-                      spread: 2,
-                      borderRadius: 10,
-                      color: Theme.of(context).primaryColor,
-                      child: IconButton(
+                    trailing: IconButton(
+                      icon: Icon(
+                        Icons.content_copy,
                         color: Colors.black,
-                        icon: Icon(Icons.content_copy),
-                        onPressed: () {
-                          Clipboard.setData(new ClipboardData(
-                              text: "patelaadarsh0@gmail.com"));
-                        },
                       ),
+                      onPressed: () {
+                        Clipboard.setData(
+                            new ClipboardData(text: "patelaadarsh0@gmail.com"));
+                      },
                     ),
                   ),
                   SizedBox(height: 8),
                   Text(
                     'or',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(fontSize: 16, color: Colors.black,),
                   ),
                   SizedBox(height: 8),
                   Text(
@@ -92,7 +87,7 @@ class _ShadyFormState extends State<ShadyForm> {
                           TextFormField(
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              labelText: 'Your Name',
+                              labelText: 'Your name',
                               labelStyle: TextStyle(),
                               border: OutlineInputBorder(),
                             ),
@@ -125,12 +120,12 @@ class _ShadyFormState extends State<ShadyForm> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  ClayContainer(
-                    spread: 3,
-                    borderRadius: 10,
-                    depth: 30,
-                    color: Theme.of(context).primaryColor,
-                    child: FlatButton(
+                  Container(
+                    child: RaisedButton(
+                      color: Colors.white.withOpacity(0.1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(5.0),
+                      ),
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           name = _nameController.text;

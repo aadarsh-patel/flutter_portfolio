@@ -4,6 +4,6 @@ var shadyThemeData = ThemeData(
   brightness: Brightness.dark,
   primaryColorDark: Colors.black,
   primaryColor: Colors.blue,
-  accentColor: Colors.green,
+  accentColor: Colors.white.withOpacity(0.5),
   fontFamily: 'Varela',
 );

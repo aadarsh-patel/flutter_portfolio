@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:clay_containers/clay_containers.dart';
-
 import 'chip.dart';
 import 'list_tile.dart';
 
@@ -16,11 +14,11 @@ class _ShadyProfileState extends State<ShadyProfile> {
     MediaQueryData queryData;
     queryData = MediaQuery.of(context);
 
-    double _varHeight = 650;
+    double _varHeight = 655;
     if (queryData.size.width <= 567) {
-      _varHeight = 890;
+      _varHeight = 990;
     } else if (queryData.size.width <= 1123) {
-      _varHeight = 720;
+      _varHeight = 750;
     }
 
     return Card(
@@ -35,29 +33,31 @@ class _ShadyProfileState extends State<ShadyProfile> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: 10),
-            ClayContainer(
-              color: Theme.of(context).primaryColor,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15.0),
+                border: Border.all(
+                  width: 2.0,
+                  color: Colors.white.withOpacity(0.1),
+                ),
+              ),
               width: 200,
               height: 200,
               child: Image.asset('assets/images/test.png'),
-              borderRadius: 25,
-              emboss: true,
             ),
             SizedBox(height: 32),
-            ClayContainer(
-              color: Theme.of(context).primaryColor,
+            Container(
+              color: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.all(20),
-                child: Text(
+                child: SelectableText(
                   "Hello! I'm Aadarsh Patel\n2nd Year CSE Student at IIIT Naya Raipur.",
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
+                    color: Colors.black,
                     fontSize: 25,
                   ),
                 ),
               ),
-              emboss: true,
-              borderRadius: 25,
             ),
             Spacer(flex: 1),
             Text(
@@ -70,7 +70,7 @@ class _ShadyProfileState extends State<ShadyProfile> {
             SizedBox(height: 20.0),
             Wrap(
               spacing: 24.0,
-              runSpacing: 24.0,
+              runSpacing: 10.0,
               direction: Axis.horizontal,
               children: <Widget>[
                 ShadyChip('App Development'),
@@ -87,7 +87,9 @@ class _ShadyProfileState extends State<ShadyProfile> {
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Wrap(
               spacing: 20.0,
               runSpacing: 12.0,

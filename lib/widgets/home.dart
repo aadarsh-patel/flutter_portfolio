@@ -27,16 +27,15 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        elevation: 100,
+        backgroundColor: Colors.white.withOpacity(0.2),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.portrait),
-            title: Text('Profile'),
+            icon: Icon(Icons.portrait, color: Colors.black,),
+            title: Text('Profile',style: TextStyle(color: Colors.black,)),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            title: Text('Contact me'),
+            icon: Icon(Icons.mail,color: Colors.black,),
+            title: Text('Contact me',style: TextStyle(color: Colors.black,)),
           ),
         ],
         currentIndex: _selectedIndex,
